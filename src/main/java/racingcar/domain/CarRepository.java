@@ -42,4 +42,8 @@ public class CarRepository {
 
 		return winnerNames;
 	}
+
+	public List<Car> getCarList() {
+		return carList;
+	}
 }

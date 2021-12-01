@@ -11,7 +11,6 @@ public class Car implements Comparable<Car>{
 		this.name = name;
 	}
 
-	// 자동차 이동
 	public void move() {
 		if (Randoms.pickNumberInRange(0, 9) >= CONDITION_FOR_MOVE) {
             position++;

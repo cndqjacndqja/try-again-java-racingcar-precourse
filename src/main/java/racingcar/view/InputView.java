@@ -31,7 +31,7 @@ public class InputView {
 		if (value >= 0 && value <= 9) {
 			return;
 		}
-		throw new IllegalArgumentException("입력 값이 숫자여야 합니다.");
+		throw new IllegalArgumentException("[ERROR] 입력 값이 숫자여야 합니다.");
 	}
 
 	private static String[] splitCarNames(String input) {
@@ -45,14 +45,14 @@ public class InputView {
 
 	private static void validateNameFormat(String name) {
 		if (name.length() > NAME_DISTANCE) {
-			throw new IllegalArgumentException("자동차 이름이 5글자를 초과합니다.");
+			throw new IllegalArgumentException("[ERROR] 자동차 이름이 5글자를 초과합니다.");
 		}
 	}
 
 	private static void validateDuplicateNames(String[] names) {
 		HashSet<String> tempSet = new HashSet<>(Arrays.asList(names));
 		if (names.length != tempSet.size()) {
-			throw new IllegalArgumentException("중복된 이름이 존재합니다.");
+			throw new IllegalArgumentException("[ERROR] 중복된 이름이 존재합니다.");
 		}
 	}
 }

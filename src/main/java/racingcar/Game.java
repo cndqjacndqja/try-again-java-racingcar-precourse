@@ -2,6 +2,7 @@ package racingcar;
 
 import racingcar.domain.CarRepository;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class Game {
 	public void run() {
@@ -12,6 +13,7 @@ public class Game {
 		System.out.println("실행 결과");
 		for (int i = 0; i < numberOfCarsMove; i++) {
 			carRepository.moveCars();
+			OutputView.printResultOfCarStatus(carRepository.getCarList());
 		}
 	}
 }

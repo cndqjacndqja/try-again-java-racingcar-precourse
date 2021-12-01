@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 public class CarRepository {
 	private final List<Car> carList = new ArrayList<>();
 
-	public void createCars(String[] name) {
-		for (String s : name) {
-			carList.add(new Car(s));
+	public void createCars(String[] names) {
+		for (String name : names) {
+			carList.add(new Car(name));
 		}
 	}
 
@@ -21,8 +21,8 @@ public class CarRepository {
 	}
 
 	public List<String> getWinnersName() {
-		List<Car> winners = findWinners();
-		return winners.stream()
+		List<Car> winnerCars = findWinners();
+		return winnerCars.stream()
 			.map(Car::getName)
 			.collect(Collectors.toList());
 	}

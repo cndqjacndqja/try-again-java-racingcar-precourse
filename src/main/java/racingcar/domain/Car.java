@@ -6,13 +6,15 @@ public class Car implements Comparable<Car>{
 	private final String name;
 	private int position = 0;
 	private static final int CONDITION_FOR_MOVE = 4;
+	private static final int MIX_RANDOM_NUMBER = 0;
+	private static final int MAX_RANDOM_NUMBER = 9;
 
 	public Car(String name) {
 		this.name = name;
 	}
 
 	public void move() {
-		if (Randoms.pickNumberInRange(0, 9) >= CONDITION_FOR_MOVE) {
+		if (Randoms.pickNumberInRange(MIX_RANDOM_NUMBER, MAX_RANDOM_NUMBER) >= CONDITION_FOR_MOVE) {
             position++;
 		}
 	}
@@ -26,7 +28,7 @@ public class Car implements Comparable<Car>{
 	}
 
 	@Override
-	public int compareTo(Car o) {
-		return o.getPosition() - getPosition();
+	public int compareTo(Car car) {
+		return car.getPosition() - getPosition();
 	}
 }

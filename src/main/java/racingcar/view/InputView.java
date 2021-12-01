@@ -7,7 +7,7 @@ import java.util.List;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-	private static final int NAME_DISTANCE = 5;
+	private static final int MAX_NAME_LENGTH = 5;
 
 	public static String[] inputCarNames() {
 		System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
@@ -31,7 +31,7 @@ public class InputView {
 		if (value >= 0 && value <= 9) {
 			return;
 		}
-		throw new IllegalArgumentException("[ERROR] 입력 값이 숫자여야 합니다.");
+		throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
 	}
 
 	private static String[] splitCarNames(String input) {
@@ -44,7 +44,7 @@ public class InputView {
 	}
 
 	private static void validateNameFormat(String name) {
-		if (name.length() > NAME_DISTANCE) {
+		if (name.length() > MAX_NAME_LENGTH) {
 			throw new IllegalArgumentException("[ERROR] 자동차 이름이 5글자를 초과합니다.");
 		}
 	}

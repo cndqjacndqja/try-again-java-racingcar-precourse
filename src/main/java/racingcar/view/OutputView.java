@@ -23,7 +23,7 @@ public class OutputView {
 
 	public static void printFinalWinners(List<String> winnersName) {
 		StringBuilder sb = new StringBuilder("최종 우승자는 ");
-		if(!winnersName.isEmpty()) {
+		if (!winnersName.isEmpty()) {
 			sb.append(winnersName.get(0));
 		}
 
@@ -33,6 +33,5 @@ public class OutputView {
 		sb.append(" 입니다.");
 		System.out.println(sb);
 	}
-
 
 }

@@ -185,3 +185,20 @@ public class Car {
 ## 📝 License
 
 This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/blob/master/LICENSE) licensed.
+
+---
+
+## 기능 목록
+
+- [ ] 게임 시작
+- [ ] 자동차 이름 입력
+  - [ ] [ERROR] 쉼표를 구분자로 나눴을 때, 5 글자 이하여야 한다.
+  - [ ] [ERROR] 동일한 이름은 중복 체크 해야 한다.
+- [ ] 자동차 상태 저장
+  - [ ] 입력받은 이름에 따라 자동차 생성
+  - [ ] 전체 자동차 이동
+  - [ ] 우승자 조회
+- [ ] 몇 번 이동할 것인지 입력
+  - [ ] [ERROR] 입력 값이 숫자여야 한다.
+- [ ] 각 자동차들 이동
+- [ ] 우승자 출력

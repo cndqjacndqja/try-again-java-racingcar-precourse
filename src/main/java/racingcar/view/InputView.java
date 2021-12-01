@@ -2,16 +2,36 @@ package racingcar.view;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import camp.nextstep.edu.missionutils.Console;
 
-//- [ ] 자동차 이름 입력
 public class InputView {
 	private static final int NAME_DISTANCE = 5;
 
 	public static String[] inputCarNames() {
 		System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
 		return splitCarNames(Console.readLine());
+	}
+
+	public static int inputNumberOfCarsMoving() {
+		System.out.println("시도할 회수는 몇회인가요?");
+		String input = Console.readLine();
+		validateNumberOfCarsMoving(input);
+		return Integer.parseInt(input);
+	}
+
+	public static void validateNumberOfCarsMoving(String input) {
+		List<String> transferInputToStringList = Arrays.asList(input.split(""));
+		transferInputToStringList.forEach(InputView::validateIsStringNumber);
+	}
+
+	private static void validateIsStringNumber(String input) {
+		int value = Integer.parseInt(input);
+		if (value >= 0 && value <= 9) {
+			return;
+		}
+		throw new IllegalArgumentException("입력 값이 숫자여야 합니다.");
 	}
 
 	private static String[] splitCarNames(String input) {
